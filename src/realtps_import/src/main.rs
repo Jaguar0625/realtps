@@ -224,6 +224,7 @@ async fn make_client(chain: Chain, rpc_url: String) -> Result<Option<Box<dyn Cli
         ChainType::Pivx => Some(Box::new(PivxClient::new(&rpc_url)?)),
         ChainType::Solana => Some(Box::new(SolanaClient::new(&rpc_url)?)),
         ChainType::Stellar => Some(Box::new(StellarClient::new(&rpc_url)?)),
+        ChainType::Symbol => Some(Box::new(SymbolClient::new(&rpc_url)?)),
         ChainType::Tendermint => Some(Box::new(TendermintClient::new(chain, &rpc_url)?)),
         ChainType::Substrate => Some(Box::new(SubstrateClient::new(chain, &rpc_url).await?)),
     };

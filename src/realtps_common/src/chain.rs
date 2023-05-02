@@ -14,6 +14,7 @@ pub enum ChainType {
     Solana,
     Stellar,
     Substrate,
+    Symbol,
     Tendermint,
 }
 
@@ -55,6 +56,7 @@ pub enum Chain {
     SecretNetwork,
     Solana,
     Stellar,
+    Symbol,
     Terra,
 }
 
@@ -101,6 +103,7 @@ impl Chain {
             // Chain::SecretNetwork,
             Chain::Solana,
             Chain::Stellar,
+            Chain::Symbol,
             // todo forked, rpc disappeared
             //Chain::Terra,
         ]
@@ -142,6 +145,7 @@ impl Chain {
             Chain::SecretNetwork => "Secret Network",
             Chain::Solana => "Solana",
             Chain::Stellar => "Stellar",
+            Chain::Symbol => "Symbol",
             Chain::Terra => "Terra",
         }
     }
@@ -172,6 +176,7 @@ impl Chain {
             Chain::Pivx => ChainType::Pivx,
             Chain::Solana => ChainType::Solana,
             Chain::Stellar => ChainType::Stellar,
+            Chain::Symbol => ChainType::Symbol,
             Chain::CosmosHub | Chain::Osmosis | Chain::SecretNetwork | Chain::Terra => {
                 ChainType::Tendermint
             }
@@ -223,6 +228,7 @@ impl<'a> TryFrom<&'a str> for Chain {
             "secretnetwork" => Ok(Chain::SecretNetwork),
             "solana" => Ok(Chain::Solana),
             "stellar" => Ok(Chain::Stellar),
+            "symbol" => Ok(Chain::Symbol),
             "terra" => Ok(Chain::Terra),
             chain => bail!("failed parsing chain name {}", chain),
         }

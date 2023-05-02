@@ -8,6 +8,7 @@ mod pivx;
 mod solana;
 mod stellar;
 mod substrate;
+mod symbol;
 mod tendermint;
 
 pub use self::algorand::*;
@@ -20,4 +21,5 @@ pub use self::pivx::*;
 pub use self::solana::*;
 pub use self::stellar::*;
 pub use self::substrate::*;
+pub use self::symbol::*;
 pub use self::tendermint::*;
